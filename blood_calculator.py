@@ -4,9 +4,12 @@ def interface():
     while keep_running:
         print("Options:")
         print("9-Quit")
+        print("1-HDL test")
         choice = input("Enter your choice: ")
         if choice == "9":
             keep_running = False
+        elif choice == "1":
+            HDL_driver()
     return
 
 def accept_input(test_name):
@@ -22,9 +25,13 @@ def check_HDL(HDL_value):
         answer = "Low"
     return answer
 
+def print_result(test_name, test_value, test_class):
+    out_string = "The test value of {} for {} is {}.".format(test_value, test_name, test_class)
+    print(out_string)
+    return
+
 def HDL_driver():
     HDL_value = accept_input("HDL")
     classification = check_HDL(HDL_value)
-
-
+    print_result("HDL", HDL_value, classification)
 interface()
