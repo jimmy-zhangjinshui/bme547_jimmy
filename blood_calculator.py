@@ -1,3 +1,5 @@
+print("This is the database module and python calls it {}".format(__name__))
+
 def interface():
     print("Blood Test Analysis")
     keep_running = True
@@ -73,4 +75,6 @@ def Total_Cholesterol_driver():
     classification = check_Total_Cholesterol(Total_Cholesterol_value)
     print_result("Total Cholesterol", Total_Cholesterol_value, classification)
 
-interface()
+if __name__ == "__main__":
+    interface()
+
